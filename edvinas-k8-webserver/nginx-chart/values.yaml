@@ -1,0 +1,21 @@
+replicaCount: 1
+
+image:
+  repository: edvinas-nginx-hello-world
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  name: nginx-service
+  type: ClusterIP
+  port: 80
+  targetPort: 80
+
+env:
+  name: dev
+
+ingress:
+  enabled: true
+  hostname: localhost
+  path: /
+  annotations: {}
